@@ -3,6 +3,20 @@ import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { dataportfolio, meta } from "../../content_option";
+import tamm from '../../assets/images/portfolio/tamm.png';
+import curio from '../../assets/images/portfolio/curio.png';
+import digiXT from '../../assets/images/portfolio/digiXT.png';
+import accurate from '../../assets/images/portfolio/accurate.png';
+import ge from '../../assets/images/portfolio/ge.png';
+
+const imageMap = {
+  tamm,
+  curio,
+  digiXT,
+  accurate,
+  ge,
+}
+
 
 export const Portfolio = () => {
   return (
@@ -23,7 +37,7 @@ export const Portfolio = () => {
           {dataportfolio.map((data, i) => {
             return (
               <div key={i} className="po_item">
-                <img src={data.img} alt="" />
+                <img src={imageMap[data.img]} alt="" />
                 <div className="content">
                   <p>{data.description}</p>
                   <a href={data.link}>view project</a>
